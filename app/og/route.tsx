@@ -8,7 +8,9 @@ export async function GET(request: Request) {
   try {
     const image = await fetch(
       new URL("../../assets/template-bg.jpg", import.meta.url)
-    ).then((res) => res.arrayBuffer());
+    )
+      .then((res) => res.blob())
+      .then((image) => URL.createObjectURL(image));
     const { searchParams } = new URL(request.url);
 
     // ?title=<title>
