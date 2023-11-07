@@ -11,9 +11,7 @@ export async function generateSVG(name = "Nome do participante") {
   });
 
   const font = fs.readFileSync(
-    path.resolve(
-      "node_modules/next/dist/compiled/@vercel/og/noto-sans-v27-latin-regular.ttf"
-    )
+    path.resolve("assets/noto-sans-v27-latin-regular.ttf")
   );
 
   const svg = await satori(
